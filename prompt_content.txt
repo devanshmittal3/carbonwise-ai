@@ -1,0 +1,34 @@
+<USER_REQUEST>
+Build a complete frontend-only web application for PromptWars Challenge 3 by Hack2Skill.
+
+Project Name: CarbonWise AI
+
+Problem Statement:
+Create a platform that helps individuals understand, track, and reduce their personal carbon footprint through simple daily activity inputs, visual insights, eco scores, and personalized recommendations.
+
+Tech Requirements:
+- Use React + Vite
+- Use Tailwind CSS
+- Frontend only
+- No backend
+- No database
+- No external paid APIs
+- Use local state and localStorage only
+- Make it fully responsive for mobile, tablet, and desktop
+- Code should be clean, component-based, and production-ready
+
+Pages/Sections Required:
+
+1. Home Page
+Create a modern landing page with:
+- Hero section
+- App name: CarbonWise AI
+- Tagline: Track. Understand. Reduce Your Carbon Footprint.
+- Short description of the problem and solution
+- CTA button: Start Tracking
+- Feature cards:
+  - Carbon Footprint Calculator
+  - Smart Eco Score
+  - Personalized Green Tips
+  - Eco Challenges
+<truncated 5006 bytes>
