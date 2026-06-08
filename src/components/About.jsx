@@ -50,7 +50,7 @@ export default function About() {
           <Compass className="w-5 h-5 text-slate-400 dark:text-slate-500" />
           How CarbonWise AI Works
         </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm text-left">
+        <ol className="grid grid-cols-1 sm:grid-cols-3 gap-6 text-sm text-left">
           {[
             {
               num: '01',
@@ -68,13 +68,13 @@ export default function About() {
               desc: 'Take on active eco challenges, earn green points, track your achievements, and see your score improve over time.'
             }
           ].map((step, idx) => (
-            <div key={idx} className="p-5 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800/80 rounded-2xl space-y-3">
+            <li key={idx} className="p-5 bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800/80 rounded-2xl space-y-3">
               <span className="text-xs font-bold text-emerald-500 font-mono tracking-widest">{step.num}</span>
               <h4 className="font-bold text-slate-800 dark:text-slate-200">{step.title}</h4>
               <p className="text-xs text-slate-500 dark:text-slate-450 leading-relaxed">{step.desc}</p>
-            </div>
+            </li>
           ))}
-        </div>
+        </ol>
       </div>
 
       {/* Educational Disclaimer */}

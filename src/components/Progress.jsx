@@ -102,7 +102,7 @@ export default function Progress({ greenPoints, completedChallengeCount, lastSav
             {lastSavedResult ? (
               <div className="space-y-4">
                 {/* Visual mini progress bars */}
-                <div className="grid grid-cols-2 sm:grid-cols-5 gap-3">
+                <ul className="grid grid-cols-2 sm:grid-cols-5 gap-3">
                   {[
                     { name: 'Travel', value: lastSavedResult.travel, color: 'bg-emerald-500', text: 'text-emerald-500' },
                     { name: 'Power', value: lastSavedResult.electricity, color: 'bg-amber-500', text: 'text-amber-500' },
@@ -110,12 +110,12 @@ export default function Progress({ greenPoints, completedChallengeCount, lastSav
                     { name: 'Shopping', value: lastSavedResult.shopping, color: 'bg-indigo-500', text: 'text-indigo-500' },
                     { name: 'Waste', value: lastSavedResult.waste, color: 'bg-rose-500', text: 'text-rose-500' }
                   ].map((item, idx) => (
-                    <div key={idx} className="p-3 bg-slate-50 dark:bg-slate-950/40 border border-slate-100/50 dark:border-slate-800/50 rounded-2xl flex flex-col justify-between">
+                    <li key={idx} className="p-3 bg-slate-50 dark:bg-slate-950/40 border border-slate-100/50 dark:border-slate-800/50 rounded-2xl flex flex-col justify-between">
                       <span className="block text-[10px] text-slate-400 dark:text-slate-500 font-bold uppercase">{item.name}</span>
                       <span className="block font-extrabold text-sm text-slate-800 dark:text-slate-200 mt-1 font-mono">{item.value} <span className="text-[9px] font-bold text-slate-400">kg</span></span>
-                    </div>
+                    </li>
                   ))}
-                </div>
+                </ul>
               </div>
             ) : (
               <div className="p-8 text-center space-y-4 bg-slate-50 dark:bg-slate-950/20 rounded-2xl border border-dashed border-slate-200 dark:border-slate-800">
@@ -142,7 +142,7 @@ export default function Progress({ greenPoints, completedChallengeCount, lastSav
           How does your footprint compare to critical baselines? The global average needs to drop significantly to combat catastrophic warming.
         </p>
 
-        <div className="space-y-6 pt-2">
+        <ul className="space-y-6 pt-2">
           {[
             { 
               name: 'Sustainable Climate Standard Target', 
@@ -173,7 +173,7 @@ export default function Progress({ greenPoints, completedChallengeCount, lastSav
               color: 'bg-rose-500'
             }
           ].map((bench, idx) => (
-            <div key={idx} className="space-y-1">
+            <li key={idx} className="space-y-1">
               <div className="flex flex-col sm:flex-row justify-between sm:items-center text-xs font-semibold text-slate-700 dark:text-slate-350">
                 <span>{bench.name}</span>
                 <span className="font-mono text-slate-900 dark:text-white">{bench.val}</span>
@@ -182,9 +182,9 @@ export default function Progress({ greenPoints, completedChallengeCount, lastSav
               <div className="w-full h-2 bg-slate-50 dark:bg-slate-950 border border-slate-100/50 dark:border-slate-800/60 rounded-full overflow-hidden mt-1">
                 <div className={`h-full ${bench.color} rounded-full`} style={{ width: bench.width }}></div>
               </div>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
 
     </div>

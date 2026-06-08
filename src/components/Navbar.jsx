@@ -24,17 +24,21 @@ export default function Navbar({ activeTab, setActiveTab, greenPoints, currentBa
         <div className="flex items-center justify-between h-16 sm:h-20">
           
           {/* Logo / Branding */}
-          <div className="flex items-center gap-2 cursor-pointer" onClick={() => handleNavClick('home')}>
+          <button 
+            className="flex items-center gap-2 text-left cursor-pointer focus:outline-hidden focus:ring-2 focus:ring-emerald-500/40 rounded-xl p-1" 
+            onClick={() => handleNavClick('home')}
+            aria-label="CarbonWise AI Logo Home"
+          >
             <div className="p-2 rounded-xl bg-emerald-500 text-white shadow-md shadow-emerald-500/20">
               <Leaf className="w-6 h-6 animate-pulse-soft" />
             </div>
             <span className="font-bold text-xl sm:text-2xl tracking-tight bg-gradient-to-r from-emerald-600 to-teal-500 dark:from-emerald-400 dark:to-teal-400 bg-clip-text text-transparent">
               CarbonWise AI
             </span>
-          </div>
+          </button>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-1">
+          <nav className="hidden lg:flex items-center gap-1" aria-label="Desktop navigation">
             {navItems.map((item) => (
               <button
                 key={item.id}
@@ -44,6 +48,7 @@ export default function Navbar({ activeTab, setActiveTab, greenPoints, currentBa
                     ? 'bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 font-semibold'
                     : 'text-slate-600 hover:text-emerald-500 hover:bg-slate-100/50 dark:text-slate-300 dark:hover:text-emerald-400 dark:hover:bg-slate-800/50'
                 }`}
+                aria-current={activeTab === item.id ? 'page' : undefined}
               >
                 {item.label}
               </button>
@@ -70,6 +75,7 @@ export default function Navbar({ activeTab, setActiveTab, greenPoints, currentBa
               onClick={() => setDarkMode(!darkMode)}
               className="p-2.5 rounded-xl border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all cursor-pointer"
               title={darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+              aria-label={darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
             >
               {darkMode ? <Sun className="w-5 h-5 text-amber-400" /> : <Moon className="w-5 h-5 text-indigo-500" />}
             </button>
@@ -81,6 +87,8 @@ export default function Navbar({ activeTab, setActiveTab, greenPoints, currentBa
             <button
               onClick={() => setDarkMode(!darkMode)}
               className="p-2 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all cursor-pointer"
+              title={darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
+              aria-label={darkMode ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
             >
               {darkMode ? <Sun className="w-4 h-4 text-amber-400" /> : <Moon className="w-4 h-4 text-indigo-500" />}
             </button>
@@ -89,6 +97,7 @@ export default function Navbar({ activeTab, setActiveTab, greenPoints, currentBa
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               className="p-2 rounded-lg border border-slate-200 dark:border-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800 transition-all cursor-pointer"
+              aria-label={mobileMenuOpen ? 'Close navigation menu' : 'Open navigation menu'}
             >
               {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
@@ -110,6 +119,7 @@ export default function Navbar({ activeTab, setActiveTab, greenPoints, currentBa
                     ? 'bg-emerald-500 text-white font-semibold'
                     : 'text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
                 }`}
+                aria-current={activeTab === item.id ? 'page' : undefined}
               >
                 {item.label}
               </button>

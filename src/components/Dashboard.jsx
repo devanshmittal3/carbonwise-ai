@@ -125,17 +125,17 @@ export default function Dashboard({ results, inputs, onReset, setActiveTab }) {
             <span className="text-xs text-slate-400 dark:text-slate-500 font-semibold">Normalized vs. Highest category</span>
           </div>
 
-          <div className="space-y-6">
+          <ul className="space-y-6">
             {categories.map((cat, idx) => {
               const percentage = total > 0 ? Math.round((cat.value / total) * 100) : 0;
               const relativeBarWidth = Math.max(5, (cat.value / maxVal) * 100);
 
               return (
-                <div key={idx} className="group space-y-2 text-left">
+                <li key={idx} className="group space-y-2 text-left">
                   {/* Category Details */}
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-2.5">
-                      <div className={`p-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-100/50 dark:border-slate-850 ${cat.text}`}>
+                      <div className={`p-2 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-100/50 dark:border-slate-850 ${cat.text}`} aria-hidden="true">
                         {cat.icon}
                       </div>
                       <span className="font-bold text-sm text-slate-800 dark:text-slate-200">{cat.name}</span>
@@ -153,10 +153,10 @@ export default function Dashboard({ results, inputs, onReset, setActiveTab }) {
                       style={{ width: `${relativeBarWidth}%` }}
                     ></div>
                   </div>
-                </div>
+                </li>
               );
             })}
-          </div>
+          </ul>
 
           {/* Prompt action to Eco Challenges */}
           <div className="p-4 rounded-2xl bg-emerald-500/5 dark:bg-emerald-500/10 border border-emerald-500/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-left mt-4">

@@ -126,19 +126,19 @@ export default function Recommendations({ results }) {
               {currentRecommendation.desc}
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
+          <ul className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-2">
             {currentRecommendation.actions.map((act, idx) => {
               const [boldText, normalText] = act.split(': ');
               return (
-                <div key={idx} className="p-4 rounded-2xl bg-white/50 dark:bg-slate-900/40 border border-white/40 dark:border-slate-800/40 flex items-start gap-2.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 mt-2"></div>
+                <li key={idx} className="p-4 rounded-2xl bg-white/50 dark:bg-slate-900/40 border border-white/40 dark:border-slate-800/40 flex items-start gap-2.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-emerald-500 shrink-0 mt-2" aria-hidden="true"></div>
                   <span className="text-xs text-slate-700 dark:text-slate-300 leading-relaxed">
                     <strong>{boldText}</strong>: {normalText}
                   </span>
-                </div>
+                </li>
               );
             })}
-          </div>
+          </ul>
         </div>
       </div>
 
@@ -148,14 +148,14 @@ export default function Recommendations({ results }) {
           <HelpCircle className="w-5 h-5 text-emerald-500" />
           General Carbon-Saving Tips
         </h4>
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+        <ul className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {generalTips.map((tip, idx) => (
-            <div key={idx} className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-800/60 hover:shadow-xs transition-all">
+            <li key={idx} className="p-5 rounded-2xl bg-slate-50 dark:bg-slate-950/40 border border-slate-100 dark:border-slate-800/60 hover:shadow-xs transition-all">
               <h5 className="font-bold text-sm text-slate-900 dark:text-white mb-1.5">{tip.title}</h5>
               <p className="text-xs text-slate-500 dark:text-slate-400 leading-relaxed">{tip.desc}</p>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
 
     </div>

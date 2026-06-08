@@ -183,6 +183,7 @@ export default function Calculator({ inputs, setInputs, onCalculate }) {
                       key={mode.id}
                       type="button"
                       onClick={() => handleInputChange('transportMode', mode.id)}
+                      aria-pressed={inputs.transportMode === mode.id}
                       className={`p-4 rounded-2xl border text-left flex flex-col justify-between h-28 transition-all hover:scale-[1.02] cursor-pointer ${
                         inputs.transportMode === mode.id
                           ? 'border-emerald-500 bg-emerald-50/50 dark:bg-emerald-950/20 ring-2 ring-emerald-500/20'
@@ -256,6 +257,7 @@ export default function Calculator({ inputs, setInputs, onCalculate }) {
                       key={diet.id}
                       type="button"
                       onClick={() => handleInputChange('dietType', diet.id)}
+                      aria-pressed={inputs.dietType === diet.id}
                       className={`p-4 rounded-2xl border text-left flex items-start gap-4 transition-all hover:scale-[1.01] cursor-pointer ${
                         inputs.dietType === diet.id
                           ? 'border-emerald-500 bg-emerald-50/50 dark:bg-emerald-950/20 ring-2 ring-emerald-500/20'
@@ -285,6 +287,7 @@ export default function Calculator({ inputs, setInputs, onCalculate }) {
                       key={freq.id}
                       type="button"
                       onClick={() => handleInputChange('shoppingFrequency', freq.id)}
+                      aria-pressed={inputs.shoppingFrequency === freq.id}
                       className={`p-4 rounded-2xl border text-left flex items-start gap-4 transition-all hover:scale-[1.01] cursor-pointer ${
                         inputs.shoppingFrequency === freq.id
                           ? 'border-emerald-500 bg-emerald-50/50 dark:bg-emerald-950/20 ring-2 ring-emerald-500/20'
@@ -318,6 +321,7 @@ export default function Calculator({ inputs, setInputs, onCalculate }) {
                       key={habit.id}
                       type="button"
                       onClick={() => handleInputChange('wasteHabit', habit.id)}
+                      aria-pressed={inputs.wasteHabit === habit.id}
                       className={`p-4 rounded-2xl border text-left flex items-start gap-4 transition-all hover:scale-[1.01] cursor-pointer ${
                         inputs.wasteHabit === habit.id
                           ? 'border-emerald-500 bg-emerald-50/50 dark:bg-emerald-950/20 ring-2 ring-emerald-500/20'

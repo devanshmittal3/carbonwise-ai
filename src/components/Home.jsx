@@ -75,8 +75,8 @@ export default function Home({ setActiveTab }) {
         {/* Right Side: Graphic Panel */}
         <div className="flex-1 w-full max-w-lg lg:max-w-none flex justify-center relative">
           {/* Animated decorative shapes */}
-          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full bg-emerald-400/20 dark:bg-emerald-500/10 blur-3xl -z-10 animate-pulse-soft"></div>
-          <div className="absolute top-10 right-10 w-48 h-48 rounded-full bg-teal-400/20 dark:bg-teal-500/10 blur-2xl -z-10 animate-float"></div>
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 rounded-full bg-emerald-400/20 dark:bg-emerald-500/10 blur-3xl -z-10 animate-pulse-soft" aria-hidden="true"></div>
+          <div className="absolute top-10 right-10 w-48 h-48 rounded-full bg-teal-400/20 dark:bg-teal-500/10 blur-2xl -z-10 animate-float" aria-hidden="true"></div>
 
           {/* Core Graphic Dashboard Container */}
           <div className="w-full max-w-md p-6 rounded-3xl bg-white dark:bg-slate-900 shadow-xl border border-slate-100 dark:border-slate-800/80 space-y-6">
@@ -129,13 +129,13 @@ export default function Home({ setActiveTab }) {
         </div>
 
         {/* Feature Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
+        <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pt-4">
           {features.map((feature, idx) => (
-            <div
+            <li
               key={idx}
               className="p-6 text-left rounded-2xl bg-white dark:bg-slate-900 hover:shadow-lg hover:shadow-slate-100/50 dark:hover:shadow-black/20 hover:border-emerald-500/20 dark:hover:border-emerald-500/10 border border-slate-100 dark:border-slate-800 transition-all group"
             >
-              <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-100/80 dark:border-slate-800/80 inline-block mb-4 group-hover:scale-110 transition-transform duration-300">
+              <div className="p-3 rounded-xl bg-slate-50 dark:bg-slate-950 border border-slate-100/80 dark:border-slate-800/80 inline-block mb-4 group-hover:scale-110 transition-transform duration-300" aria-hidden="true">
                 {feature.icon}
               </div>
               <h3 className="text-lg font-bold text-slate-900 dark:text-white mb-2">
@@ -144,9 +144,9 @@ export default function Home({ setActiveTab }) {
               <p className="text-sm text-slate-500 dark:text-slate-400 leading-relaxed">
                 {feature.desc}
               </p>
-            </div>
+            </li>
           ))}
-        </div>
+        </ul>
       </section>
 
     </div>

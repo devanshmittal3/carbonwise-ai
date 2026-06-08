@@ -24,10 +24,10 @@ export default function Footer({ setActiveTab }) {
         <div className="flex flex-col items-center md:items-end gap-2 text-xs text-slate-400 dark:text-slate-500">
           <span>&copy; {new Date().getFullYear()} CarbonWise AI. Developed for PromptWars Challenge 3.</span>
           <div className="flex gap-3 mt-1">
-            <a href="https://github.com" target="_blank" rel="noopener noreferrer" className="hover:text-slate-600 dark:hover:text-slate-350 transition-colors" title="Source Code">
+            <a href="https://github.com/devanshmittal3/carbonwise-ai" target="_blank" rel="noopener noreferrer" className="hover:text-slate-600 dark:hover:text-slate-300 transition-colors" title="GitHub Repository" aria-label="GitHub Repository">
               <Code2 className="w-4 h-4" />
             </a>
-            <a href="https://hack2skill.com" target="_blank" rel="noopener noreferrer" className="hover:text-slate-600 dark:hover:text-slate-350 transition-colors">
+            <a href="https://hack2skill.com" target="_blank" rel="noopener noreferrer" className="hover:text-slate-600 dark:hover:text-slate-300 transition-colors" title="Hack2Skill Website" aria-label="Hack2Skill Website">
               <Globe className="w-4 h-4" />
             </a>
           </div>

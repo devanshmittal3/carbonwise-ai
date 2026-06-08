@@ -94,6 +94,7 @@ export default function Challenges({ completedIds, onCompleteChallenge, onResetC
           onClick={onResetChallenges}
           className="px-4 py-2.5 rounded-xl border border-slate-200 dark:border-slate-850 text-slate-600 dark:text-slate-400 hover:text-rose-500 dark:hover:text-rose-400 font-semibold hover:bg-rose-50 dark:hover:bg-rose-950/20 transition-all flex items-center gap-1.5 text-xs w-fit cursor-pointer"
           title="Reset completed challenges state and points"
+          aria-label="Reset completed challenges state and points"
         >
           <RotateCcw className="w-4 h-4" />
           Reset Challenges
@@ -134,11 +135,14 @@ export default function Challenges({ completedIds, onCompleteChallenge, onResetC
       </div>
 
       {/* Filter Tabs */}
-      <div className="flex gap-1.5 border-b border-slate-100 dark:border-slate-850 pb-2">
+      <div className="flex gap-1.5 border-b border-slate-100 dark:border-slate-850 pb-2" role="tablist" aria-label="Filter challenges">
         {['all', 'active', 'completed'].map((f) => (
           <button
             key={f}
             onClick={() => setFilter(f)}
+            role="tab"
+            aria-selected={filter === f}
+            aria-label={`Show ${f} challenges`}
             className={`px-4 py-2 rounded-xl text-xs font-bold uppercase tracking-wider transition-all cursor-pointer ${
               filter === f
                 ? 'bg-slate-900 dark:bg-slate-100 text-white dark:text-slate-900 shadow-xs'
@@ -166,11 +170,11 @@ export default function Challenges({ completedIds, onCompleteChallenge, onResetC
       )}
 
       {/* Challenges Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredChallenges.map((item) => {
           const isDone = completedIds.includes(item.id);
           return (
-            <div 
+            <li 
               key={item.id}
               className={`p-6 text-left rounded-3xl border bg-white dark:bg-slate-900 flex flex-col justify-between h-64 transition-all duration-300 ${
                 isDone 
@@ -214,6 +218,7 @@ export default function Challenges({ completedIds, onCompleteChallenge, onResetC
                 ) : (
                   <button
                     onClick={() => handleComplete(item.id, item.points, item.title)}
+                    aria-label={`Mark "${item.title}" challenge as complete`}
                     className="w-full py-3 rounded-2xl bg-slate-900 hover:bg-emerald-500 text-white hover:text-white font-semibold text-sm transition-all duration-200 flex items-center justify-center gap-1.5 cursor-pointer shadow-xs"
                   >
                     Mark as Complete
@@ -221,10 +226,10 @@ export default function Challenges({ completedIds, onCompleteChallenge, onResetC
                 )}
               </div>
 
-            </div>
+            </li>
           );
         })}
-      </div>
+      </ul>
 
     </div>
   );
